@@ -46,7 +46,7 @@ public class TelaRelatorio extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 51));
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Relatório de Vendas", null, null, null, new java.awt.Color(204, 204, 204)));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Relatorio de Vendas"));
 
         lblLoja.setText("Loja:");
 
@@ -220,7 +220,7 @@ public class TelaRelatorio extends javax.swing.JFrame {
              } 
              else {
                  txtiDataFinal.setBackground(Color.white);
-           return;
+           
              }
            
              if (cbLojas.getSelectedIndex()== 0){
