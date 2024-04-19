@@ -4,6 +4,10 @@
  */
 package com.lojaInformatica.projeto_integrador;
 
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author HP
@@ -257,7 +261,7 @@ public class TelaVendas extends javax.swing.JFrame {
 
         String sistemaOperacional = "";
 
-        sistemaOperacional = bgSO.getSelection().getActionCommand();
+        
 
         String tipoHD = "";
 
