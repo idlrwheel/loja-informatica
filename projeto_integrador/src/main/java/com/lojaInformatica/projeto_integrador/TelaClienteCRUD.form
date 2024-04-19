@@ -121,8 +121,8 @@
                               <Component id="combEstado" max="32767" attributes="0"/>
                               <Component id="combSexo" pref="193" max="32767" attributes="0"/>
                               <Component id="txtiTelefone" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtCPF" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtiData" max="32767" attributes="0"/>
+                              <Component id="txtiCPF" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtiNascimento" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -156,7 +156,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtCPF" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtiCPF" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -171,7 +171,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtiData" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtiNascimento" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -316,14 +316,14 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JFormattedTextField" name="txtCPF">
+        <Component class="javax.swing.JFormattedTextField" name="txtiCPF">
           <Properties>
             <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
               <Format format="###.###.###-##" subtype="-1" type="5"/>
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JFormattedTextField" name="txtiData">
+        <Component class="javax.swing.JFormattedTextField" name="txtiNascimento">
           <Properties>
             <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
               <Format format="dd/MM/yyyy" subtype="-1" type="1"/>

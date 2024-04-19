@@ -3,7 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.lojaInformatica.projeto_integrador;
+import com.lojaInformatica.projeto_integrador.utils.Validador;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+
+
 
 /**
  *
@@ -45,8 +49,8 @@ public class TelaClienteCRUD extends javax.swing.JFrame {
         combSexo = new javax.swing.JComboBox<>();
         btnCadastrar = new javax.swing.JButton();
         txtiTelefone = new javax.swing.JFormattedTextField();
-        txtCPF = new javax.swing.JFormattedTextField();
-        txtiData = new javax.swing.JFormattedTextField();
+        txtiCPF = new javax.swing.JFormattedTextField();
+        txtiNascimento = new javax.swing.JFormattedTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         btnConfirmar = new javax.swing.JButton();
@@ -118,12 +122,12 @@ public class TelaClienteCRUD extends javax.swing.JFrame {
         }
 
         try {
-            txtCPF.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+            txtiCPF.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
 
-        txtiData.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/yyyy"))));
+        txtiNascimento.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/yyyy"))));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -153,8 +157,8 @@ public class TelaClienteCRUD extends javax.swing.JFrame {
                             .addComponent(combEstado, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(combSexo, 0, 193, Short.MAX_VALUE)
                             .addComponent(txtiTelefone)
-                            .addComponent(txtCPF)
-                            .addComponent(txtiData))))
+                            .addComponent(txtiCPF)
+                            .addComponent(txtiNascimento))))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -179,7 +183,7 @@ public class TelaClienteCRUD extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(txtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtiCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
@@ -191,7 +195,7 @@ public class TelaClienteCRUD extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(txtiData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtiNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
@@ -311,7 +315,7 @@ public class TelaClienteCRUD extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtiNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtiNomeActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtiNomeActionPerformed
 
     private void txtiSobrenomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtiSobrenomeActionPerformed
@@ -319,9 +323,49 @@ public class TelaClienteCRUD extends javax.swing.JFrame {
     }//GEN-LAST:event_txtiSobrenomeActionPerformed
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
-        // TODO add your handling code here:
+         if (txtiNome.getText().equals("")) {
+            JOptionPane.showMessageDialog(rootPane, "O campo 'nome' precisa ser preenchido");
+            txtiNome.requestFocusInWindow();          
+        } else {
+            return;
+        }
+         if (txtiSobrenome.getText().equals("")) {
+            JOptionPane.showMessageDialog(rootPane, "O campo 'Sobrenome' precisa ser preenchido");
+            txtiNome.requestFocusInWindow();
+        } else {
+            return;
+        }
+         if(txtiEmail.getText().equals("")){
+             JOptionPane.showMessageDialog(rootPane, "O campo 'E-mail' precisa ser preenchido");
+            txtiEmail.requestFocusInWindow();
+         } else {
+             return;
+         }
+         if(txtiCEP.getText().equals("")){
+             JOptionPane.showMessageDialog(rootPane, "O campo 'CEP' precisa ser preenchido");
+            txtiCEP.requestFocusInWindow();
+         } else {
+             return;
+         }
+         if(txtiCPF.getText().equals("")){
+             JOptionPane.showMessageDialog(rootPane, "O campo 'CPF' precisa ser preenchido");
+            txtiCPF.requestFocusInWindow();
+         } else {
+             return;
+         }
+         if(txtiTelefone.getText().equals("")){
+             JOptionPane.showMessageDialog(rootPane, "O campo 'Telefone' precisa ser preenchido");
+            txtiTelefone.requestFocusInWindow();
+         } else {
+             return; 
+         }
+         if(txtiNascimento.getText().equals("")){
+             JOptionPane.showMessageDialog(rootPane, "O campo 'Data de nascimento' precisa ser preenchido");
+            txtiNascimento.requestFocusInWindow();
+         } else {
+             return;
     }//GEN-LAST:event_btnCadastrarActionPerformed
-
+    }
     private void btnDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnDeletarActionPerformed
@@ -388,10 +432,10 @@ public class TelaClienteCRUD extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JFormattedTextField txtCPF;
     private javax.swing.JTextField txtiCEP;
-    private javax.swing.JFormattedTextField txtiData;
+    private javax.swing.JFormattedTextField txtiCPF;
     private javax.swing.JTextField txtiEmail;
+    private javax.swing.JFormattedTextField txtiNascimento;
     private javax.swing.JTextField txtiNome;
     private javax.swing.JTextField txtiSobrenome;
     private javax.swing.JFormattedTextField txtiTelefone;
